@@ -10,26 +10,12 @@
 	<body>
 		<h1>Vnesite podatke</h1>
 		
-		<form action="izpis.jsp" method="get">
+		<form action="seznam.jsp" method="post">
 			Ime: <input type="text" name="ime" /> <br/>
 			Priimek: <input type="text" name="priimek" /> <br/>
-			<input type="submit" value="Vnos">
+			<input type="submit" name="vnos" value="Vnos">
 		</form>
-	
-		<% 
-			String staroIme=null;
-			String starPriimek=null;
-			//pregled piškotkov
-			for (Cookie c : request.getCookies()) {
-				if (c.getName().equals("cime")) staroIme=c.getValue();
-				if (c.getName().equals("cpriimek")) starPriimek=c.getValue();
-			}
-		%>
-		
-		<% if (staroIme!=null) { %>
-			Nazadnje ste tukaj vnesli <strong><%=staroIme%> <%=starPriimek%></strong>.
-		<% } %>
-	
+
 	</body>
 	
 </html>
